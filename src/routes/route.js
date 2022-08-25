@@ -6,7 +6,7 @@ const moment = require('moment')
 //const BookController= require("../controllers/bookController")
 //const commonMW = require ("../middlewares/commonMiddlewares")
 
-router.get("/Info", function (req, res) {
+router.get("/black", function (req, res) {
     let now = moment();
     const ipAddress = req.ip
     const  f= req.originalUrl
