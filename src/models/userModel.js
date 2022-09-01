@@ -5,27 +5,26 @@ const userSchema = new mongoose.Schema( {
     lastName: String,
     mobile: {
         type: String,
-        unique: true,
+
         required: true
     },
     emailId: String,
+    password: String,
     gender: {
         type: String,
-        enum: ["male", "female", "LGBTQ"] //"falana" will give an error
+        enum: ["male", "female", "other"]
     },
     age: Number,
-    // isIndian: Boolean,
-    // parentsInfo: {
-    //     motherName: String,
-    //     fatherName: String,
-    //     siblingName: String
-    // },
-    // cars: [ String  ]
-}, { timestamps: true });
+    isDeleted :{
+        type: Boolean,
+        default : false
+    },
+    posts:{
+        type: [],
+        default : []
+    }
+}, 
 
-module.exports = mongoose.model('User', userSchema) //users
+{ timestamps: true });
 
-
-
-// String, Number
-// Boolean, Object/json, array
+module.exports = mongoose.model('userDB', userSchema)
