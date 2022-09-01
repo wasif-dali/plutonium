@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const userModel = require("../models/userModel");
 
 
-// ----------------------------------------------- Authenticate Middleware ----------------------------------------------------------
+//  Authenticate Middleware 
 
 const authenticate =  function(req, res, next){
     
@@ -20,11 +20,11 @@ const authenticate =  function(req, res, next){
   
       next()
 }catch(err){
-return res.status(500).send({msg: "Servor error or token is invalid" })
+return res.status(500).send({msg: "Server error or token is invalid" })
 }
 }
 
-// --------------------------------- Authorisation --------------------------------
+///Authorisation 
 
 const authorise = async function(req, res, next){
   try{
